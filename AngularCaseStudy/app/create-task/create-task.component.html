@@ -1,0 +1,108 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/createTask">Create Task</a>
+  </li>
+  
+  <li class="nav-item">
+      <a class="nav-link" routerLink="/assignTask">Assign Task</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/updatePriority">Update Priority</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/searchTask">Search Task</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addNotes">Add Notes</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addBookmarks">Add Bookmark</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/trackTaskStatus">Track Task</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/getAllTasks">View Tasks</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/deleteTask">Delete Task</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/createUser">Create User</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/getAllUsers">View Users</a>
+    </li>
+    
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Log Out</a>
+    </li>
+
+</ul>
+
+
+
+<div class="login-wrapper" >
+    <div class="card">
+      <div class="card-body">
+        <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        
+          
+          <input type="number" class="form-control" name="taskID" class="form-control" placeholder="Task ID" formControlName="taskID" required autofocus>
+          
+          <input type="number" class="form-control" name="ownerID" placeholder="Owner ID" formControlName="ownerID">
+
+          <input type="number" class="form-control" name="creatorID" placeholder="Creator ID" formControlName="creatorID">
+
+          <input type="text" class="form-control" name="name" placeholder="Task Name" formControlName="name">
+
+          <textarea type="text" class="form-control" name="description" placeholder="Description" formControlName="description"></textarea>
+
+          Status : 
+          <select class="form-control" name="status" formControlName="status">
+            <option value="InProgress">InProgress</option>
+            <option value="OnHold">OnHold</option>
+            <option value="Cancelled">Cancelled</option>
+            <option value="Closed">Closed</option>
+          </select>
+
+          Priority :
+         <select class="form-control" name="priority" formControlName="priority">
+             <option value="High">High</option>
+             <option value="Medium">Medium</option>
+             <option value="Low">Low</option>
+         </select>
+
+         <textarea type="text" class="form-control" name="notes" placeholder="Notes" formControlName="notes"></textarea>
+
+         IsBookmarked :
+        <select class="form-control" name="isBookmarked" formControlName="isBookmarked">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select>
+
+        Created On :
+        <input class="form-control" type="datetime-local" name="createdOn"  formControlName="createdOn"/>
+    
+        Status Changed On :
+        <input class="form-control" type="datetime-local" name="statusChangedOn" formControlName="statusChangedOn"/>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid" (click)="onSubmit(form.value)">Create Task</button>
+        </form>
+      </div>
+    </div>
+  </div>

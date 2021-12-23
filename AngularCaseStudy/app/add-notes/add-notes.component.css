@@ -1,0 +1,10 @@
+.login-wrapper{
+    margin : 3rem auto;
+    width: 30rem;
+}
+input,textarea{
+    margin-bottom: 2rem;
+}
+h5{
+    margin-left: 40rem;
+}

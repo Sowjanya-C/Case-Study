@@ -1,0 +1,129 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/createTask">Create Task</a>
+  </li>
+  
+  <li class="nav-item">
+      <a class="nav-link" routerLink="/assignTask">Assign Task</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/updatePriority">Update Priority</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/searchTask">Search Task</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addNotes">Add Notes</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addBookmarks">Add Bookmark</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/trackTaskStatus">Track Task</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/getAllTasks">View Tasks</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/deleteTask">Delete Task</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/createUser">Create User</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/getAllUsers">View Users</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Log Out</a>
+    </li>
+
+</ul>
+
+<div class="login-wrapper" >
+    <div class="card">
+      <div class="card-body">
+        <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+          
+          <input type="number" class="form-control" name="taskID" placeholder="Task ID" formControlName="taskID" required autofocus>
+        
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid" (click)="onSubmit(form.value)">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor = "let task of tasks">
+    <table class="table">
+        <thead class="thead-light">
+          <tr [ngStyle]="{'background-color':'lightgrey'}">
+            <th scope="col">Field</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Task ID : </td>
+            <td>{{task.taskID}}</td>
+          </tr>
+          <tr>
+            <td>Owner ID : </td>
+            <td>{{task.ownerID}}</td>
+          </tr>
+          <tr>
+            <td>Creator ID : </td>
+            <td>{{task.creatorID}}</td>
+          </tr>
+          <tr>
+            <td>Name : </td>
+            <td>{{task.name}}</td>
+          </tr>
+          <tr>
+            <td>Description: </td>
+            <td>{{task.description}}</td>
+          </tr>
+          <tr>
+            <td>Status : </td>
+            <td>{{task.status}}</td>
+          </tr>
+          <tr>
+            <td>Priority : </td>
+            <td>{{task.priority}}</td>
+          </tr>
+          <tr>
+            <td>Notes : </td>
+            <td>{{task.notes}}</td>
+          </tr>
+          <tr>
+            <td>IsBookmarked : </td>
+            <td>{{task.isBookmarked}}</td>
+          </tr>
+          <tr>
+            <td>Created On: </td>
+            <td>{{task.createdOn}}</td>
+          </tr>
+          <tr>
+            <td>Status Changed On: : </td>
+            <td>{{task.statusChangedOn}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+</div>
+
+
+
+

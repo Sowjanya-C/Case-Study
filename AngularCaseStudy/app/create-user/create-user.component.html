@@ -1,0 +1,98 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/createTask">Create Task</a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/assignTask">Assign Task</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/updatePriority">Update Priority</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/searchTask">Search Task</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addNotes">Add Notes</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addBookmarks">Add Bookmark</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/trackTaskStatus">Track Task</a>
+      </li>
+  
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/getAllTasks">View Tasks</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/deleteTask">Delete Task</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/createUser">Create User</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/getAllUsers">View Users</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Log Out</a>
+      </li>
+  
+  </ul>
+  
+  
+  
+  <div class="login-wrapper" >
+      <div class="card">
+        <div class="card-body">
+          <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+          
+            
+            <input type="number" class="form-control" name="userID" class="form-control" placeholder="User ID" formControlName="userID" required autofocus>
+            
+            <input type="text" class="form-control" name="userName" placeholder="User Name" formControlName="userName">
+  
+            <input type="email" class="form-control" name="email" placeholder="Email" formControlName="email">
+
+            <input type="text" class="form-control" name="firstName" placeholder="First Name" formControlName="firstName">
+
+            <input type="text" class="form-control" name="lastName" placeholder="Last Name" formControlName="lastName">
+
+            <input type="number" class="form-control" name="contactNumber" class="form-control" placeholder="Contact Number" formControlName="contactNumber">
+  
+            <input type="text" class="form-control" name="role" placeholder="Role" formControlName="role"/>
+  
+  
+           IsActive :
+          <select class="form-control" name="isActive" formControlName="isActive">
+              <option value="True">True</option>
+              <option value="False">False</option>
+          </select>
+
+          DOB:
+          <input type="date" class="form-control" name="dob" placeholder="dob" formControlName="dob"/>
+  
+          Created On :
+          <input class="form-control" type="datetime-local" name="createdOn"  formControlName="createdOn"/>
+      
+
+          <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" formControlName="password" required>
+  
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid" (click)="onSubmit(form.value)">Create User</button>
+          </form>
+        </div>
+      </div>
+    </div>

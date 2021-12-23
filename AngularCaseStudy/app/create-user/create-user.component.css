@@ -1,0 +1,7 @@
+.login-wrapper{
+    margin : 3rem auto;
+    width: 30rem;
+}
+input,select{
+    margin-bottom: 1rem;
+}

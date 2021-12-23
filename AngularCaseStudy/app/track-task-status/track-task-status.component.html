@@ -1,0 +1,115 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/createTask">Create Task</a>
+  </li>
+  
+  <li class="nav-item">
+      <a class="nav-link" routerLink="/assignTask">Assign Task</a>
+    </li>
+  
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/updatePriority">Update Priority</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/searchTask">Search Task</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addNotes">Add Notes</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/addBookmarks">Add Bookmark</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/trackTaskStatus">Track Task</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/getAllTasks">View Tasks</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/deleteTask">Delete Task</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/createUser">Create User</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/getAllUsers">View Users</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/">Log Out</a>
+    </li>
+
+</ul>
+
+
+<div class="login-wrapper" >
+    <div class="card">
+      <div class="card-body">
+        <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+          
+            Status : 
+            <select class="form-control" name="status" formControlName="status">
+              <option value="InProgress">InProgress</option>
+              <option value="OnHold">OnHold</option>
+              <option value="Cancelled">Cancelled</option>
+              <option value="Closed">Closed</option>
+            </select>
+
+        
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid" (click)="onSubmit(form.value)">Track Status</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div >
+  <table class="table" >
+        <thead class="thead-light">
+            <tr [ngStyle]="{'background-color':'lightgrey'}">
+                <th scope="col">Task ID</th>
+                <th scope="col">Owner ID</th>
+                <th scope="col">Creator ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Notes</th>
+                <th scope="col">IsBookmarked</th>
+                <th scope="col">Created On</th>
+                <th scope="col">Status Changed on</th> 
+            </tr> 
+        </thead>
+        <tbody>
+        <tr *ngFor = "let task of tasks">
+            <td>{{task.taskID}}</td>
+            <td>{{task.ownerID}}</td>
+            <td>{{task.creatorID}}</td>
+            <td>{{task.name}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.status}}</td>
+            <td>{{task.priority}}</td>
+            <td>{{task.notes}}</td>
+            <td>{{task.isBookmarked}}</td>
+            <td>{{task.createdOn}}</td>
+            <td>{{task.statusChangedOn}}</td>
+        </tr>
+        </tbody>
+  </table>
+   
+</div> 
+

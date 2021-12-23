@@ -1,0 +1,85 @@
+<div *ngFor= "let u of users">
+        
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/createTask">Create Task</a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/assignTask">Assign Task</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/updatePriority">Update Priority</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/searchTask">Search Task</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addNotes">Add Notes</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/addBookmarks">Add Bookmark</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/trackTaskStatus">Track Task</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/getAllTasks">View Tasks</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/deleteTask">Delete Task</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/getAllUsers">View Users</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/createUser">Create User</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Log Out</a>
+      </li>
+
+  </ul>
+</div>
+<div class="login-wrapper" >
+  <div class="card">
+    <div class="card-body">
+      <form class="form-signin" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        
+        <input type="text" id="inputUserName" class="form-control" name="username" placeholder="User Name" formControlName="username" required autofocus>
+        
+        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" formControlName="password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onSubmit(form.value)">Sign in</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
